@@ -118,4 +118,31 @@ footer {
   background-color: #E9D4FF;
 }
 
-footer ul {}
+footer .left {
+  align-items: center;
+}
+
+footer .right {
+  justify-content: center;
+}
+
+footer ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+footer ul li {
+  padding: 0.4rem;
+  align-items: center;
+  justify-content: center;
+  background: #250C40;
+  width: 3.5rem;
+  border-radius: 25%;
+}
+
+footer ul a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
