@@ -24,7 +24,8 @@ a {
   align-items: center;
   gap: 0.3rem;
   padding: 0.4rem;
-  width: 9rem;
+  width: 9.5rem;
+  justify-content: center;
 
   border: 1px solid #250C40;
   border-radius: 10px;
@@ -40,6 +41,8 @@ header {
   align-items: center;
   padding: 1rem;
   background-color: #E9D4FF;
+
+  font-size: 1.1rem;
 }
 
 ul {
@@ -48,7 +51,64 @@ ul {
   gap: 1.5rem;
 }
 
+li a {
+  color: #350766;
+  transition: color .3s;
+  transition: background .3s;
+  padding: 0.4rem;
+  border: 1px solid transparent;
+  border-radius: 15%;
+}
+
+li a:hover {
+  color: #E9D4FF;
+  background: #501a8aa7;
+}
+
 /* MAIN */
+main {
+  background-color: #fbf7ff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  width: 80vw;
+}
+
+section {
+  margin-block: 1.5rem;
+  padding-inline: 1.5rem;
+}
+
+section .wpp {
+  align-self: center;
+}
+
+section#home {
+  display: flex;
+  flex-direction: row;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  width: 65%;
+
+  gap: .7rem;
+}
+
+.right {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.right img {
+  width: 175px;
+}
 
 /* FOOTER */
 footer {
