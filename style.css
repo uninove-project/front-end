@@ -112,10 +112,14 @@ section#home {
 
 /* FOOTER */
 footer {
+  background-color: #E9D4FF;
+}
+
+footer div {
   display: flex;
   justify-content: space-between;
-  padding: 1.5rem;
-  background-color: #E9D4FF;
+  padding-inline: 1.5rem;
+  padding-block: 0.7rem;
 }
 
 footer .left {
@@ -145,4 +149,8 @@ footer ul a {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+footer p {
+  padding-bottom: 1rem;
 }
