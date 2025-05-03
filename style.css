@@ -87,11 +87,6 @@ section .wpp {
   align-self: center;
 }
 
-section#home {
-  display: flex;
-  flex-direction: row;
-}
-
 .left {
   display: flex;
   flex-direction: column;
@@ -108,9 +103,37 @@ section#home {
   justify-content: center;
 }
 
-.right img {
-  width: 175px;
+/* HOME */
+section#home {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
 }
+
+#home .left {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+#home .left h2 {
+  font-size: 1.6rem;
+}
+
+#home .left p {
+  font-size: 1.2rem;
+}
+
+#home .wpp {
+  width: 100%;
+  height: 2.5rem;
+  font-size: 1.2rem;
+}
+
+#home .right img {
+  width: 15rem;
+}
+
 
 /* CONTACT */
 #contact {
@@ -126,12 +149,17 @@ section#home {
 }
 
 #contact .right-text h3 {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
+}
+
+#contact .right-text p {
+  font-size: 1.2rem;
 }
 
 #contact .right-text .wpp {
   width: 100%;
   height: 2.5rem;
+  font-size: 1.2rem;
 }
 
 #contact img {
