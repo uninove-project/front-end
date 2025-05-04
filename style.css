@@ -136,8 +136,6 @@ section#home {
 
 /* PRODUCTS */
 .card-container {
-  display: flex;
-  flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
 }
@@ -155,7 +153,7 @@ section#home {
 
 .card img {
   width: 100%;
-  height: auto;
+  height: 65%;
 }
 
 .card-content {
