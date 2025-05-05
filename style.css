@@ -36,6 +36,14 @@ a {
   background-color: #250C40;
 }
 
+.btn {
+  transition: background .2s ease-in-out;
+}
+
+.btn:hover {
+  background: #501A8A;
+}
+
 /* HEADER */
 
 header {
@@ -182,6 +190,11 @@ section#home {
   border-radius: 0.25rem;
   margin-top: 1rem;
   color: #fff;
+  transition: background .2s ease-in-out;
+}
+
+.card-content .btn:hover {
+  background: #501A8A;
 }
 
 /* FEEDBACKS */
