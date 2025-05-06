@@ -22,6 +22,14 @@ a {
   font-weight: 600;
 }
 
+p {
+  color: #343434;
+}
+
+h4 {
+  color: #501A8A;
+}
+
 .wpp {
   display: flex;
   align-items: center;
@@ -149,7 +157,6 @@ section#home {
 
 .card-container {
   justify-content: center;
-  flex-wrap: wrap;
 }
 
 .card {
