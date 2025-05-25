@@ -33,6 +33,7 @@ p {
 
 h4 {
   color: #501A8A;
+  text-align: center;
 }
 
 .btn {
@@ -58,43 +59,49 @@ h4 {
 header {
   background-color: #E9D4FF;
   padding: 1rem;
-  position: sticky;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
   top: 0;
+  left: 0;
+  width: 100%;
   z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .header-container {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
+  gap: 1rem;
 }
 
-/* Menu Desktop */
+/* NAV MENU - Desktop */
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .nav-menu ul {
   display: flex;
-  gap: 1.5rem;
-  list-style: none;
+  gap: 2rem;
+  align-items: center;
 }
 
 .nav-menu ul li a {
-  color: #350766;
-  font-weight: 600;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  transition: all 0.3s ease;
+  color: #250C40;
+  font-size: 1rem;
+  transition: color 0.3s ease;
 }
 
 .nav-menu ul li a:hover {
-  color: #E9D4FF;
-  background: #501a8aa7;
+  color: #501A8A;
+}
+
+.nav-menu .wpp.btn {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
 }
 
 /* Botão WhatsApp Desktop */
@@ -117,22 +124,32 @@ header {
 /* Menu Hamburger */
 .hamburger {
   display: none;
-  background: none;
+  flex-direction: column;
+  gap: 5px;
+  background: transparent;
   border: none;
   cursor: pointer;
-  padding: 0.5rem;
-  z-index: 1001;
-  position: relative;
+  z-index: 1002;
 }
 
 .hamburger span {
   display: block;
   width: 25px;
   height: 3px;
-  background: #350766;
-  margin: 5px 0;
-  transition: all 0.3s ease;
-  border-radius: 3px;
+  background-color: #250C40;
+  transition: all 0.3s ease-in-out;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
 }
 
 /* Overlay para mobile */
@@ -154,6 +171,7 @@ main {
   align-items: center;
   justify-content: center;
   margin: auto;
+  margin-top: 10%;
   width: 90%;
   max-width: 1200px;
 }
@@ -389,72 +407,134 @@ footer p {
 
 /* MEDIA QUERIES */
 
-/* Mobile */
+/* Tablet & Mobile */
 @media (max-width: 768px) {
+  .header-container {
+    width: 100%;
+    justify-content: space-between;
+  }
+
   .hamburger {
-    display: block;
+    display: flex;
+  }
+
+  .hamburger.active {
+    position: fixed;
+    top: 1.2rem;
+    right: 1.2rem;
+  }
+
+  .hamburger.active span {
+    background-color: #fff;
   }
 
   .nav-menu {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 70%;
-    height: 100vh;
-    background: #E9D4FF;
+    display: none !important;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #250C40;
+    z-index: 1001;
     padding: 2rem;
-    transition: right 0.3s ease;
-    z-index: 1000;
+    gap: 2rem;
+    overflow-y: auto;
   }
 
   .nav-menu.active {
-    right: 0;
+    display: flex !important;
   }
 
   .nav-menu ul {
     flex-direction: column;
     gap: 1.5rem;
-    margin-bottom: 2rem;
-  }
-
-  .nav-menu ul li a {
-    padding: 1rem;
-    display: block;
     text-align: center;
-    border-radius: 8px;
-    font-size: 1.1rem;
   }
 
-  .desktop-btn {
+  .nav-menu.active ul li a {
+    color: white !important;
+    padding: 10px;
+    font-size: 1.4rem;
+  }
+
+  .nav-menu .wpp.btn {
+    font-size: 1.2rem;
+    max-width: 15rem;
+    background-color: #fff;
+    color: #250C40;
+    border-color: #fff;
+  }
+
+  .nav-menu .wpp.btn:hover {
+    background-color: #5400b4;
+    color: #fff;
+    border-color: #5400b4;
+  }
+
+  .nav-menu .wpp.btn svg path {
+    fill: #250C40;
+  }
+
+  main {
+    padding-top: 5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  main {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  header {
+    font-size: 1.1rem;
+    padding: 1rem 10%;
+  }
+
+  .hamburger {
     display: none;
   }
 
-  .mobile-btn {
+  .nav-menu {
     display: flex;
-    margin-top: 1rem;
-    padding: 0.8rem 1.5rem;
-    font-size: 1.1rem;
-    width: 100%;
-    justify-content: center;
+    position: static;
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    flex-direction: row;
   }
 
-  .overlay.active {
-    display: block;
+  .nav-menu ul {
+    flex-direction: row;
+    gap: 2rem;
   }
 
-  /* Transforma hamburger em X */
-  .hamburger.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
+  .nav-menu ul li a {
+    font-size: 1rem;
+    color: #250C40;
   }
 
-  .hamburger.active span:nth-child(2) {
-    opacity: 0;
+  .nav-menu .wpp.btn {
+    background-color: #250C40;
+    color: #fff;
+    border-color: #250C40;
   }
 
-  .hamburger.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
+  .nav-menu .wpp.btn svg path {
+    fill: #fff;
+  }
+
+  .card-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .card img {
+    height: 200px;
   }
 }
 
